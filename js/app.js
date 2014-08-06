@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
 	$("#btn_val").click(function(e){
 		e.preventDefault(e);
 		$("#fb_list").remove();
@@ -36,9 +37,36 @@ $(document).ready(function(){
 
 });
 
+$(window).load(function() {
+	user_input;
+	if (isNaN(user_input))
+		{alert("Please type a number");}
+	else 
+	{
+		if(typeof(+user_input) == "number")
+		{
+			if(+user_input <= 0)
+			{
+				alert("Please choose a number greater than 0.");
+			}
+			else
+			{
+				$("#fb_div").append('<ul id="fb_list"></ul>');
+				fizzBuzz(+user_input);
+				$("#val").val(" ");
+			}
+		}
+		else
+		{
+			alert("Please choose numbers only!");
+		}
+	}
 
+});
 
-function fizzBuzz(x) {
+var user_input = prompt("Please enter a number to FizzBuzz!");
+
+var fizzBuzz = function (x) {
 	var gen_list = $("#fb_list");
 	for (var i = 1; i <= x; i++) {
 		if ((i % 3) == 0 && ((i % 5) == 0)) {
