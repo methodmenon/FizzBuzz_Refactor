@@ -37,10 +37,13 @@ $(document).ready(function(){
 
 });
 
+
 $(window).load(function() {
 	user_input;
 	if (isNaN(user_input))
-		{alert("Please type a number");}
+		{
+			alert("Please type a number");
+		}
 	else 
 	{
 		if(typeof(+user_input) == "number")
