@@ -39,7 +39,8 @@ $(document).ready(function(){
 
 
 $(window).load(function() {
-	user_input;
+	askForNumber;
+	/*user_input;
 	if (isNaN(user_input))
 		{
 			alert("Please type a number");
@@ -63,11 +64,11 @@ $(window).load(function() {
 		{
 			alert("Please choose numbers only!");
 		}
-	}
+	}*/
 
 });
 
-var user_input = prompt("Please enter a number to FizzBuzz!");
+//var user_input = prompt("Please enter a number to FizzBuzz!");
 
 var fizzBuzz = function (x) {
 	var gen_list = $("#fb_list");
@@ -84,6 +85,38 @@ var fizzBuzz = function (x) {
 		else
 		{
 			gen_list.append("<li>" + i + "</li>");
+		}
+	}
+}
+
+var askForNumber() = function() {
+	var user_input = prompt("Please enter a number to FizzBuzz!");
+	
+	if (isNaN(user_input))
+		{
+			alert("Please type a number");
+			askForNumber;
+		}
+	else 
+	{
+		if(typeof(+user_input) == "number")
+		{
+			if(+user_input <= 0)
+			{
+				alert("Please choose a number greater than 0.");
+				askForNumber;
+			}
+			else
+			{
+				$("#fb_div").append('<ul id="fb_list"></ul>');
+				fizzBuzz(+user_input);
+				$("#val").val(" ");
+			}
+		}
+		else
+		{
+			alert("Please choose numbers only!");
+			askForNumber;
 		}
 	}
 }
