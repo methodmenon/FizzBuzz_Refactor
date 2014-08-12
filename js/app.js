@@ -39,7 +39,7 @@ $(document).ready(function(){
 
 
 $(window).load(function() {
-	askForNumber;
+	askForNumber();
 	/*user_input;
 	if (isNaN(user_input))
 		{
@@ -87,36 +87,36 @@ var fizzBuzz = function (x) {
 			gen_list.append("<li>" + i + "</li>");
 		}
 	}
-}
+};
 
-var askForNumber() = function() {
+var askForNumber = function() {
 	var user_input = prompt("Please enter a number to FizzBuzz!");
-	
 	if (isNaN(user_input))
 		{
 			alert("Please type a number");
-			askForNumber;
+			askForNumber();
 		}
 	else 
 	{
-		if(typeof(+user_input) == "number")
+		if(parseInt(user_input))
 		{
-			if(+user_input <= 0)
+			this_num = parseInt(user_input);
+			if(this_num <= 0)
 			{
 				alert("Please choose a number greater than 0.");
-				askForNumber;
+				askForNumber();
 			}
 			else
 			{
 				$("#fb_div").append('<ul id="fb_list"></ul>');
-				fizzBuzz(+user_input);
+				fizzBuzz(user_input);
 				$("#val").val(" ");
 			}
 		}
 		else
 		{
 			alert("Please choose numbers only!");
-			askForNumber;
+			askForNumber();
 		}
 	}
-}
+};
